@@ -136,12 +136,18 @@ class LinkedList:
             itr = itr.next
         if(flag == False):
             raise Exception("List doesn't contain given value : ",data)
-        
+
+    def insert_values(self,list):
+        for data in list:
+            if(self.head == None):
+                self.insert_at_beginning(data)
+            else:
+                self.insert_at_end(data)
 if __name__ == '__main__':
     #its a way to store code that should only run when your file is executed as a script
     
     #LL of Integers
-    ll = LinkedList()
+    """ll = LinkedList()
     ll.insert_at_end(5)
     ll.insert_at_beginning(6)
     ll.insert_at_beginning(8)
@@ -158,12 +164,13 @@ if __name__ == '__main__':
     ll.remove_at_end()
     ll.remove_at_loc(3)
     ll.print_list()
-    ll.print_length()
+    ll.print_length()"""
     #ll.remove_at_loc(67) # this raises exception
 
     print()
     # LL of Strings
     ls = LinkedList()
+    ls.insert_values(["banana","mango","grapes","orange"])
     ls.insert_at_beginning("Banana")
     ls.insert_at_end("Grapes")
     ls.insert_at_loc(2,"Mango")
@@ -188,4 +195,4 @@ if __name__ == '__main__':
     ls.remove_at_loc(1)
     ls.print_list()
     ls.print_length()
-       
+    
