@@ -102,6 +102,28 @@ class LinkedList:
 
         print("list contains : ",listStr)
 
+    #Exercise
+    def insert_after_value(self, data_after, data_to_insert):
+    # Search for first occurance of data_after value in linked list
+    # Now insert data_to_insert after data_after node
+        if(self.head == None):
+            raise Exception("List is empty So can't find value : ",data_after)
+        itr = self.head
+        flag = False
+        while itr:
+            if(itr.data == data_after):
+                node = Node(data_to_insert,itr.next)
+                itr.next = node
+                flag = True
+                break
+            itr = itr.next
+        if(flag == False):
+            raise Exception("List doesn't contain given data : ",data_after)
+        
+    def remove_by_value(self, data):
+    # Remove first node that contains data
+        pass
+
 if __name__ == '__main__':
     #its a way to store code that should only run when your file is executed as a script
     
@@ -133,6 +155,9 @@ if __name__ == '__main__':
     ls.insert_at_end("Grapes")
     ls.insert_at_loc(2,"Mango")
     ls.insert_at_loc(2,"Apple")
+    ls.print_list()
+    ls.print_length()
+    ls.insert_after_value("Grapes","PineApple")
     ls.print_list()
     ls.print_length()
     ls.remove_at_begining()
