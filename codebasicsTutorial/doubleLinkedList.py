@@ -47,8 +47,9 @@ class DoubleLL:
                 itr = itr.next
             
     def remove_at_beg(self):
-        pass
-
+        if(self.head == None):
+            raise Exception("List is empty")
+        self.head = self.head.next # the node is automatically Garbage Collected
     def get_length(self):
         count =0
         itr = self.head
@@ -90,5 +91,7 @@ if __name__ == '__main__':
     print("length of DLL : ",ll.get_length())
     ll.print_forward()
     ll.print_backward()
+    ll.remove_at_beg()
+    ll.print_forward()
     print("length of DLL : ",ll.get_length())
     
