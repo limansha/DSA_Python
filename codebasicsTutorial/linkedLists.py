@@ -122,8 +122,21 @@ class LinkedList:
         
     def remove_by_value(self, data):
     # Remove first node that contains data
-        pass
-
+        if(self.head == None):
+            raise Exception("List is already empty")
+        itr = self.head
+        flag = False
+        count = 0
+        while itr:
+            if(itr.data == data):
+                flag = True
+                self.remove_at_loc(count)
+                break
+            count +=1
+            itr = itr.next
+        if(flag == False):
+            raise Exception("List doesn't contain given value : ",data)
+        
 if __name__ == '__main__':
     #its a way to store code that should only run when your file is executed as a script
     
@@ -155,6 +168,16 @@ if __name__ == '__main__':
     ls.insert_at_end("Grapes")
     ls.insert_at_loc(2,"Mango")
     ls.insert_at_loc(2,"Apple")
+    ls.insert_at_beginning("Papaya")
+    ls.insert_at_end("Kiwi")
+    ls.insert_at_loc(3,"Avacado")
+    ls.print_list()
+    ls.print_length()
+    ls.remove_by_value("Papaya")
+    ls.print_list()
+    ls.remove_by_value("Kiwi")
+    ls.print_list()
+    ls.remove_by_value("Avacado")
     ls.print_list()
     ls.print_length()
     ls.insert_after_value("Grapes","PineApple")
