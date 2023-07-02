@@ -143,6 +143,17 @@ class LinkedList:
                 self.insert_at_beginning(data)
             else:
                 self.insert_at_end(data)
+    
+    def reverse_ll(self):
+        prev = None
+        nxt = None
+        curr = self.head
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+        return prev
 if __name__ == '__main__':
     #its a way to store code that should only run when your file is executed as a script
     
@@ -167,7 +178,7 @@ if __name__ == '__main__':
     ll.print_length()"""
     #ll.remove_at_loc(67) # this raises exception
 
-    print()
+    #print()
     # LL of Strings
     ls = LinkedList()
     ls.insert_values(["banana","mango","grapes","orange"])
@@ -178,21 +189,25 @@ if __name__ == '__main__':
     ls.insert_at_beginning("Papaya")
     ls.insert_at_end("Kiwi")
     ls.insert_at_loc(3,"Avacado")
-    ls.print_list()
-    ls.print_length()
+    # ls.print_list()
+    # ls.print_length()
     ls.remove_by_value("Papaya")
-    ls.print_list()
+    # ls.print_list()
     ls.remove_by_value("Kiwi")
-    ls.print_list()
+    # ls.print_list()
     ls.remove_by_value("Avacado")
-    ls.print_list()
-    ls.print_length()
+    # ls.print_list()
+    # ls.print_length()
     ls.insert_after_value("Grapes","PineApple")
     ls.print_list()
-    ls.print_length()
-    ls.remove_at_begining()
-    ls.remove_at_end()
-    ls.remove_at_loc(1)
+    # ls.print_length()
+    newhead = ls.reverse_ll()
+    ls.head = newhead
     ls.print_list()
-    ls.print_length()
+    # ls.print_length()
+    # ls.remove_at_begining()
+    # ls.remove_at_end()
+    # ls.remove_at_loc(1)
+    # ls.print_list()
+    # ls.print_length()
     
