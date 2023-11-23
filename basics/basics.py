@@ -98,6 +98,10 @@ nums = TenNums()
 print("###############")
 print(next(nums)) #prints 1 as its first value is 1 in init method
 
+print(f'dtype TenNums: {type(nums)}')
+n = range(0,5,2)
+print(f'dtype range : {type(n)}')
+
 for i in nums:
     print(i)
 
