@@ -1,0 +1,7 @@
+graph representation :
+The adjacency list is generally more memory-efficient for sparse graphs, while the adjacency matrix is more efficient for dense graphs.
+-------------------
+dfs and bfs helps us to find ans to the below questns
+is node exist or not?
+is path exisits between two node?
+how many paths are possible from source node to dest node?
